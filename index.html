@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script>
+  function k2() {
+            window.open('https://wa.me/1111', '_blank');
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Investissement en Actions - Stratégies Professionnelles</title>
+    <style>
+        :root {
+            --primary-deep-blue: #003366;
+            --primary-golden-yellow: #FFD700;
+            --secondary-navy: #1B365D;
+            --accent-orange: #FF6B35;
+            --neutral-white: #FFFFFF;
+            --neutral-black: #000000;
+            --neutral-gray-light: #F8F9FA;
+            --neutral-gray-dark: #6C757D;
+            --shadow-primary: rgba(0, 51, 102, 0.2);
+            --shadow-secondary: rgba(255, 215, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .foundation-base {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--neutral-black);
+            background: linear-gradient(135deg, var(--neutral-white) 0%, var(--neutral-gray-light) 100%);
+            overflow-x: hidden;
+        }
+
+        .layout-container-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .layout-section-wrapper {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .layout-section-wrapper:nth-child(even) {
+            background: linear-gradient(45deg, var(--primary-deep-blue) 0%, var(--secondary-navy) 100%);
+            color: var(--neutral-white);
+        }
+
+        .typography-headline-primary {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, var(--primary-golden-yellow), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px var(--shadow-primary);
+        }
+
+        .typography-headline-secondary {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--primary-golden-yellow);
+        }
+
+        .typography-body-primary {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .component-hero-section {
+            background: linear-gradient(135deg, var(--primary-deep-blue) 0%, var(--secondary-navy) 50%, var(--primary-deep-blue) 100%);
+            color: var(--neutral-white);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            z-index: 1;
+        }
+
+        .component-hero-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .component-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .component-feature-card {
+            background: var(--neutral-white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px var(--shadow-primary);
+            transform: translateY(0);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .component-feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow-secondary);
+            border-color: var(--primary-golden-yellow);
+        }
+
+        .component-feature-card h3 {
+            color: var(--primary-deep-blue);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .component-feature-card p {
+            color: var(--neutral-gray-dark);
+            line-height: 1.7;
+        }
+
+        .component-visual-asset {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 15px 35px var(--shadow-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .component-visual-asset:hover {
+            transform: scale(1.05);
+        }
+
+        .interactive-button-primary {
+            background: linear-gradient(45deg, var(--primary-golden-yellow) 0%, var(--accent-orange) 100%);
+            color: var(--neutral-black);
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-button-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .interactive-button-primary:hover::before {
+            left: 100%;
+        }
+
+        .interactive-button-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+        }
+
+        .component-floating-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 400px;
+            animation: breathing-effect 3s ease-in-out infinite;
+        }
+
+        .component-floating-cta .interactive-button-primary {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.1rem;
+        }
+
+        @keyframes breathing-effect {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+        .component-whatsapp-widget {
+            position: fixed;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            cursor: pointer;
+            animation: pulse-notification 2s infinite;
+        }
+
+        .component-whatsapp-widget::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .component-whatsapp-widget::after {
+            content: '💬';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent-orange);
+            color: var(--neutral-white);
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: bounce-badge 1.5s infinite;
+        }
+
+        @keyframes pulse-notification {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.1); }
+        }
+
+        @keyframes bounce-badge {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .component-testimonial-section {
+            background: var(--neutral-gray-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--neutral-white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-primary);
+            font-style: italic;
+        }
+
+        .component-legal-disclaimer {
+            background: var(--primary-deep-blue);
+            color: var(--neutral-white);
+            padding: 40px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .legal-warning-icon {
+            color: var(--primary-golden-yellow);
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+
+        .component-footer-links {
+            background: var(--neutral-black);
+            color: var(--neutral-white);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-link {
+            color: var(--primary-golden-yellow);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-orange);
+        }
+
+        @media (max-width: 768px) {
+            .layout-container-main {
+                padding: 0 15px;
+            }
+            
+            .layout-section-wrapper {
+                padding: 40px 0;
+            }
+            
+            .component-hero-section {
+                padding: 60px 0;
+            }
+            
+            .component-floating-cta {
+                bottom: 10px;
+                width: 95%;
+            }
+            
+            .component-whatsapp-widget {
+                right: 15px;
+                top: auto;
+                bottom: 100px;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .component-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .typography-headline-primary {
+                font-size: 2rem;
+            }
+            
+            .interactive-button-primary {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="foundation-base">
+    <section class="component-hero-section">
+        <div class="layout-container-main">
+            <h1 class="typography-headline-primary">Maîtrisez les secrets du succès de l'investissement en actions</h1>
+            <p class="typography-body-primary">La plupart des investisseurs pensent qu'ils peuvent trouver de bonnes actions en s'appuyant uniquement sur les nouvelles et les rumeurs. Mais la vérité est que cette approche vous fait souvent manquer les vraies opportunités !</p>
+            <img src="img/1.jpg" alt="Investissement professionnel" class="component-visual-asset">
+            <button class="interactive-button-primary" onclick="k2()">Commencez votre parcours d'apprentissage d'investissement</button>
+        </div>
+    </section>
+
+    <section class="layout-section-wrapper">
+        <div class="layout-container-main">
+            <h2 class="typography-headline-secondary">Stratégies d'investissement basées sur les données</h2>
+            <p class="typography-body-primary">Selon la recherche de Morgan Stanley, l'utilisation de stratégies d'investissement basées sur les données peut considérablement améliorer les rendements d'investissement. Rejoignez notre communauté d'investisseurs professionnels et vous obtiendrez :</p>
+            
+            <div class="component-feature-grid">
+                <div class="component-feature-card">
+                    <h3>📈 Recommandations d'actions hebdomadaires sélectionnées</h3>
+                    <p>Nous partageons chaque semaine une liste d'actions rigoureusement analysées, avec un rendement attendu de 10% ou plus. Notre équipe d'experts vous aidera à identifier les meilleures opportunités d'investissement.</p>
+                </div>
+                
+                <div class="component-feature-card">
+                    <h3>🎯 Apprendre les stratégies et techniques d'investissement</h3>
+                    <p>Non seulement nous recommandons des actions, mais nous vous enseignons également comment gagner de l'argent avec des actions financièrement solides.</p>
+                </div>
+                
+                <div class="component-feature-card">
+                    <h3>🤝 Interagir avec des investisseurs partageant les mêmes idées</h3>
+                    <p>Dans notre communauté, vous échangerez des expériences et partagerez des insights avec d'autres investisseurs. Grâce aux discussions et interactions, vous obtiendrez une inspiration et une confiance précieuses en investissement.</p>
+                </div>
+            </div>
+            
+            <img src="img/2.jpg" alt="Communauté d'investisseurs" class="component-visual-asset">
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="interactive-button-primary" onclick="k2()">Obtenez des recommandations d'actions à haut rendement hebdomadaires</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="component-testimonial-section">
+        <div class="layout-container-main">
+            <h2 class="typography-headline-secondary" style="color: var(--primary-deep-blue);">Ce que disent nos membres</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Les recommandations m'ont aidé à diversifier mon portefeuille de manière intelligente."</p>
+                    <strong>- Membre de la communauté</strong>
+                </div>
+                <div class="testimonial-card">
+                    <p>"J'ai appris des stratégies que je n'aurais jamais découvertes seul."</p>
+                    <strong>- Investisseur actif</strong>
+                </div>
+                <div class="testimonial-card">
+                    <p>"La communauté offre un excellent environnement d'apprentissage."</p>
+                    <strong>- Nouvel investisseur</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="layout-section-wrapper">
+        <div class="layout-container-main" style="text-align: center;">
+            <h2 class="typography-headline-secondary">Agissez maintenant, changez votre avenir d'investissement !</h2>
+            <p class="typography-body-primary">N'hésitez plus, l'opportunité est à portée de main ! Cliquez sur le bouton ci-dessous, rejoignez notre communauté d'investisseurs professionnels et commencez votre voyage vers le succès en investissement !</p>
+            <button class="interactive-button-primary" onclick="k2()" style="margin-top: 30px;">Rejoignez maintenant</button>
+        </div>
+    </section>
+
+    <section class="component-legal-disclaimer">
+        <div class="layout-container-main">
+            <h3 style="color: var(--primary-golden-yellow); margin-bottom: 20px;">
+                <span class="legal-warning-icon">⚠️</span>
+                Avertissement important sur les risques
+            </h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;">* Ce service est fourni à titre de référence uniquement et ne fournit aucun service de conseil en investissement ou de trading de produits financiers.</li>
+                <li style="margin-bottom: 10px;">* Les informations fournies sont uniquement à des fins de référence et ne doivent pas servir de base pour les décisions d'investissement.</li>
+                <li style="margin-bottom: 10px;">* Vous assumez seul le risque des décisions d'investissement finales.</li>
+                <li style="margin-bottom: 10px;">* L'exactitude des données n'est pas garantie.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="component-footer-links">
+        <div class="layout-container-main">
+            <a href="#" class="footer-link">Politique de confidentialité</a>
+            <a href="#" class="footer-link">Conditions d'utilisation</a>
+        </div>
+    </footer>
+
+    <div class="component-whatsapp-widget" onclick="k2()">
+        <div class="notification-badge">1</div>
+    </div>
+<!--
+    <div class="component-floating-cta">
+        <button class="interactive-button-primary" onclick="k2()">
+            🚀 Rejoignez maintenant - Recommandations exclusives !
+        </button>
+    </div>
+-->
+    <script>
+      
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.component-feature-card, .testimonial-card');
+            animatedElements.forEach(function(element) {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+
+            let lastScrollTime = 0;
+            const scrollThrottle = 16;
+
+            window.addEventListener('scroll', function() {
+                const currentTime = Date.now();
+                if (currentTime - lastScrollTime > scrollThrottle) {
+                    const scrollPercent = window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight);
+                    const whatsappWidget = document.querySelector('.component-whatsapp-widget');
+                    
+                    if (whatsappWidget) {
+                        const rotation = scrollPercent * 360;
+                        whatsappWidget.style.transform = `translateY(-50%) rotate(${rotation}deg)`;
+                    }
+                    
+                    lastScrollTime = currentTime;
+                }
+            });
+        });
+
+        window.addEventListener('load', function() {
+            const loadingElements = document.querySelectorAll('.component-visual-asset');
+            loadingElements.forEach(function(img) {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
